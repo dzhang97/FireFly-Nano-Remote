@@ -411,12 +411,6 @@ bool receiveData() {
 
   bool received = false;
 
-  #ifdef ARDUINO_SAMD_ZERO
-
-    received = radio.recv(buf, &len);
-
-  #elif ESP32
-
     int bytes = 0;
     for (int i = 0; i < len; i++) {
       buf[i] = LoRa.read();
@@ -425,8 +419,6 @@ bool receiveData() {
     // lastRssi = LoRa.packetRssi();
     len = bytes;
     received = true;
-
-  #endif
 
   if (!received) return false;
 
