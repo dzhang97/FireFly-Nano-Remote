@@ -16,6 +16,11 @@ This document tracks the necessary cleanup, safety enhancements, and architectur
   - Replace scattered state changes with a centralized `transitionTo(AppState newState)` function to validate legal transitions.
 
 ## 🟡 Medium Priority: Code Quality & Technical Debt
+- [x] **Remove Non-Heltec Hardware Support**
+  - Removed all board definitions for Feather and TTGO.
+  - Stripped `#ifdef ARDUINO_SAMD_ZERO` and `#ifdef ESP32` conditional guards to make Heltec the default.
+  - Updated `platformio.ini` to target only `Remote_Heltec_v2` and `Receiver_Heltec_v2`.
+  - Verified build success for both targets.
 - [ ] **Remove "Zombie" Code**
   - Delete all large blocks of commented-out functions (e.g., `sleep2`, `speedControl`, old EEPROM logic).
 - [ ] **Hardware Abstraction Layer (HAL)**

@@ -197,4 +197,8 @@ const int default_throttle = 127;
   #define debug(x)
 #endif
 
+// OTA dummy credentials
+const char* const WIFI_NETWORK = "DUMMY_SSID";
+const char* const WIFI_PASSWORD = "DUMMY_PASSWORD";
+
 #endif
