@@ -55,7 +55,7 @@ const int BATTERY_MAX = 30;
 // default board configuration
 const int MAX_SPEED = 30;       // KM/H
 const int MAX_RANGE = 30;       // KM
-const int BATTERY_CELLS = 10;
+const int BATTERY_CELLS = 12;
 const int BATTERY_TYPE = 0;     // 0: LI-ION | 1: LIPO
 const int MOTOR_POLES = 22;
 const int WHEEL_DIAMETER = 90;
