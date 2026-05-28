@@ -631,7 +631,7 @@ void radioExchange() {
         case SET_STATE:
           switch (remPacket.data) {
             case UPDATE:
-              #ifdef ESP32
+              #ifdef RECEIVER_SCREEN
               prepareUpdate();
               #endif
               break;
@@ -644,7 +644,6 @@ void radioExchange() {
           break;
 
         case GET_CONFIG: response = CONFIG; break;
-
       }
 
       // send config after power on
