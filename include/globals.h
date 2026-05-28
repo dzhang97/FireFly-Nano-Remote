@@ -6,7 +6,7 @@
 
 // #define FAKE_UART // Comment out after pairing the remote and connecting VESC
 
-#define DEBUG // Uncomment DEBUG if you need to debug the remote
+// #define DEBUG // Uncomment DEBUG if you need to debug the remote
 
 const COMM_PACKET_ID VESC_COMMAND = COMM_GET_VALUES; // VESC
 // const COMM_PACKET_ID VESC_COMMAND = COMM_GET_UNITY_VALUES; // Enertion Unity
