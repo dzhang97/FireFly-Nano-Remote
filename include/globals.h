@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <datatypes.h>
 
-#define FAKE_UART // Comment out after pairing the remote and connecting VESC
+// #define FAKE_UART // Comment out after pairing the remote and connecting VESC
 
 #define DEBUG // Uncomment DEBUG if you need to debug the remote
 
