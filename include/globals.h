@@ -43,8 +43,8 @@ const int REMOTE_RX_TIMEOUT = 20; // ms
 const int REMOTE_LOCK_TIMEOUT = 10; // seconds to lock throttle when idle
 const int REMOTE_SLEEP_TIMEOUT = 180; // seconds to go to sleep mode
 
-// turn off display if battery < 15%
-const int DISPLAY_BATTERY_MIN = 15;
+// turn off display if battery < 5%
+const int DISPLAY_BATTERY_MIN = 5;
 
 // VESC current, for graphs only
 const int MOTOR_MIN = -30;
