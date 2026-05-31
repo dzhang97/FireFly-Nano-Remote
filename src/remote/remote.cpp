@@ -889,10 +889,14 @@ int readThrottlePosition() {
 
   // map values 0..1023 >> 0..255
   if (hallValue >= settings.centerHallValue + hallNoiseMargin) {    // 127 > 150
-    position = constrain(map(hallValue, settings.centerHallValue + hallNoiseMargin, settings.maxHallValue, 127, 255), 127, 255);
+    float normalized = (float)(hallValue - (settings.centerHallValue + hallNoiseMargin)) / (settings.maxHallValue - (settings.centerHallValue + hallNoiseMargin));
+    normalized = constrain(normalized, 0.0f, 1.0f);
+    position = 127 + round(128.0f * (pow(2.0f, normalized) - 1.0f));
   }
   else if (hallValue <= settings.centerHallValue - hallNoiseMargin) {
-    position = constrain(map(hallValue, settings.minHallValue, settings.centerHallValue - hallNoiseMargin, 0, 127), 0, 127);
+    float normalized = (float)((settings.centerHallValue - hallNoiseMargin) - hallValue) / ((settings.centerHallValue - hallNoiseMargin) - settings.minHallValue);
+    normalized = constrain(normalized, 0.0f, 1.0f);
+    position = 127 - round(127.0f * (pow(2.0f, normalized) - 1.0f));
   }
   else {
     // Default value if stick is in deadzone
